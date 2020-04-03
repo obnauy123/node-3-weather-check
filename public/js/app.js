@@ -1,6 +1,6 @@
 console.log('client side js loaded')
 
-
+'m'
 
 const weatherForm = document.querySelector('form')
 const search = document.querySelector('input')
