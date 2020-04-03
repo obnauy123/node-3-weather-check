@@ -5,6 +5,9 @@ const app = express()
 const requset = require('request')
 const geocode = require('./utils/geocode')
 const weather = require('./utils/weather')
+
+const port = process.env.PORT || 3000
+
 // define path
 app.use(express.static(path.join(__dirname, '../public')))
 const viewsPath = path.join(__dirname, '../templates/views')
@@ -75,7 +78,7 @@ app.get('/weather', (req,res)=>{
             res.send({
                 address: req.query.address,
                 location,
-                forecast: data1
+                forecast:data1
             })   
             
         })
@@ -108,8 +111,8 @@ app.get('*',(req,res)=>{
 
 
 
-app.listen(3000, ()=>{
-    console.log('Server is up on port 3000')
+app.listen(port, ()=>{
+    console.log('Server is up on port '+port)
 })
 
 
